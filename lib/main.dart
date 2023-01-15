@@ -1,4 +1,7 @@
+import 'package:day1/page2.dart';
 import 'package:flutter/material.dart';
+
+import 'bottomRow.dart';
 
 void main() {
   runApp(const MyApp());
@@ -121,17 +124,14 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(
-            horizontal: 50,
+            horizontal: 10,
+            vertical: 50,
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
-                'Please enter email and password',
-              ),
-              const SizedBox(
-                height: 10,
-              ),
+              const Text('Please enter email and password'),
+              const SizedBox(height: 10),
               TextField(
                 controller: emailController,
                 decoration: InputDecoration(
@@ -142,13 +142,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       onPressed: () => emailController.clear(),
                     )),
               ),
-              const SizedBox(
-                height: 10,
-              ),
+              const SizedBox(height: 10),
               if (errorEmailText.isNotEmpty) Text(errorEmailText),
-              const SizedBox(
-                height: 10,
-              ),
+              const SizedBox(height: 10),
               TextField(
                 controller: password,
                 decoration: InputDecoration(
@@ -166,9 +162,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               const SizedBox(height: 10),
               if (errorPassText.isNotEmpty) Text(errorPassText),
-              const SizedBox(
-                height: 50,
-              ),
+              const SizedBox(height: 50),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(100, 50),
@@ -184,112 +178,11 @@ class _MyHomePageState extends State<MyHomePage> {
                           )));
                 },
               ),
-              const SizedBox(
-                height: 50,
-              ),
+              const SizedBox(height: 300),
               const BottomRow(),
             ],
           ),
         ),
-      ),
-    );
-  }
-}
-
-class Page2 extends StatelessWidget {
-  final String title;
-  final String text;
-  const Page2({super.key, required this.title, required this.text});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(title)),
-      body: Center(child: Text(text)),
-    );
-  }
-}
-
-class BottomRow extends StatelessWidget {
-  const BottomRow({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Color.fromARGB(255, 48, 48, 48),
-      height: 300,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
-                'MVP IT \nSolutions',
-              ),
-              const SizedBox(
-                height: 1,
-              ),
-              IconButton(
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const Page2(
-                              title: 'Page 2',
-                              text: 'Page 2 center text',
-                            )));
-                  },
-                  icon: const Icon(
-                    Icons.link_rounded,
-                  )),
-              const SizedBox(
-                height: 1,
-              ),
-              const Text('(1)234-567-8910   US/CAN'),
-              const SizedBox(
-                height: 15,
-              ),
-              const Text('dev@mvpitsolutions.com'),
-            ],
-          ),
-          const SizedBox(width: 100),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextButton(
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const Page2(
-                              title: 'Services',
-                              text: 'Services Page',
-                            )));
-                  },
-                  child: const Text('Services')),
-              const SizedBox(height: 10),
-              const Text(
-                  'Software Development\nHome IT Services\nBusiness IT services\nPC & Mobile Device Repair\nTechnology Consulting'),
-            ],
-          ),
-          const SizedBox(
-            width: 100,
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TextButton(
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const Page2(
-                              title: 'Contact Page',
-                              text: 'Contact Us',
-                            )));
-                  },
-                  child: const Text('Contact Us')),
-              const SizedBox(height: 10),
-              const Text(
-                  'Support\nLoctions\nSocial Media\n Contact Form\nGet a quote'),
-            ],
-          )
-        ],
       ),
     );
   }
