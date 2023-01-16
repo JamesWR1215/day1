@@ -14,7 +14,7 @@ class Page2 extends StatelessWidget {
           children: [
             SizedBox(height: 20),
             Text(text),
-            SizedBox(height: 500),
+            SizedBox(height: 50),
           ],
         ),
       ),

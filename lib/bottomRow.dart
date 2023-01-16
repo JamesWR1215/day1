@@ -1,5 +1,6 @@
 import 'package:day1/page2.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BottomRow extends StatelessWidget {
   const BottomRow({super.key});
@@ -30,9 +31,7 @@ class BottomRow extends StatelessWidget {
                                   text: 'Page 2 center text',
                                 )));
                       },
-                      icon: const Icon(
-                        Icons.link_rounded,
-                      )),
+                      icon: const FaIcon(FontAwesomeIcons.linkedinIn)),
                   const SizedBox(
                     height: 1,
                   ),

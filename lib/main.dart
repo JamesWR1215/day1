@@ -178,7 +178,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           )));
                 },
               ),
-              const SizedBox(height: 300),
+              const SizedBox(height: 100),
               const BottomRow(),
             ],
           ),
