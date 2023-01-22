@@ -122,17 +122,14 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 10,
-            vertical: 50,
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text('Please enter email and password'),
-              const SizedBox(height: 10),
-              TextField(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text('Please enter email and password'),
+            const SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: TextField(
                 controller: emailController,
                 decoration: InputDecoration(
                     border: const OutlineInputBorder(),
@@ -142,10 +139,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       onPressed: () => emailController.clear(),
                     )),
               ),
-              const SizedBox(height: 10),
-              if (errorEmailText.isNotEmpty) Text(errorEmailText),
-              const SizedBox(height: 10),
-              TextField(
+            ),
+            const SizedBox(height: 10),
+            if (errorEmailText.isNotEmpty) Text(errorEmailText),
+            const SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: TextField(
                 controller: password,
                 decoration: InputDecoration(
                   border: const OutlineInputBorder(),
@@ -160,28 +160,28 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 obscureText: isPassVisible,
               ),
-              const SizedBox(height: 10),
-              if (errorPassText.isNotEmpty) Text(errorPassText),
-              const SizedBox(height: 50),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(100, 50),
-                ),
-                child: const Text('Log in'),
-                onPressed: () {
-                  if (!checkTheShit()) return;
-
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const Page2(
-                            title: 'Page 2',
-                            text: 'Page 2 center text',
-                          )));
-                },
+            ),
+            const SizedBox(height: 10),
+            if (errorPassText.isNotEmpty) Text(errorPassText),
+            const SizedBox(height: 50),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                minimumSize: const Size(100, 50),
               ),
-              const SizedBox(height: 100),
-              const BottomRow(),
-            ],
-          ),
+              child: const Text('Log in'),
+              onPressed: () {
+                if (!checkTheShit()) return;
+
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const Page2(
+                          title: 'Page 2',
+                          text: 'Page 2 center text',
+                        )));
+              },
+            ),
+            const SizedBox(height: 170),
+            const BottomRow(),
+          ],
         ),
       ),
     );
