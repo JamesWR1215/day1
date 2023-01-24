@@ -121,68 +121,66 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('Please enter email and password'),
-            const SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: TextField(
-                controller: emailController,
-                decoration: InputDecoration(
-                    border: const OutlineInputBorder(),
-                    labelText: 'Email',
-                    suffixIcon: IconButton(
-                      icon: const Icon(Icons.close),
-                      onPressed: () => emailController.clear(),
-                    )),
-              ),
-            ),
-            const SizedBox(height: 10),
-            if (errorEmailText.isNotEmpty) Text(errorEmailText),
-            const SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: TextField(
-                controller: password,
-                decoration: InputDecoration(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Text('Please enter email and password'),
+          const SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: TextField(
+              controller: emailController,
+              decoration: InputDecoration(
                   border: const OutlineInputBorder(),
-                  labelText: 'Password',
+                  labelText: 'Email',
                   suffixIcon: IconButton(
-                    icon: isPassVisible
-                        ? const Icon(Icons.visibility_off)
-                        : const Icon(Icons.visibility),
-                    onPressed: () =>
-                        setState(() => isPassVisible = !isPassVisible),
-                  ),
+                    icon: const Icon(Icons.close),
+                    onPressed: () => emailController.clear(),
+                  )),
+            ),
+          ),
+          const SizedBox(height: 10),
+          if (errorEmailText.isNotEmpty) Text(errorEmailText),
+          const SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: TextField(
+              controller: password,
+              decoration: InputDecoration(
+                border: const OutlineInputBorder(),
+                labelText: 'Password',
+                suffixIcon: IconButton(
+                  icon: isPassVisible
+                      ? const Icon(Icons.visibility_off)
+                      : const Icon(Icons.visibility),
+                  onPressed: () =>
+                      setState(() => isPassVisible = !isPassVisible),
                 ),
-                obscureText: isPassVisible,
               ),
+              obscureText: isPassVisible,
             ),
-            const SizedBox(height: 10),
-            if (errorPassText.isNotEmpty) Text(errorPassText),
-            const SizedBox(height: 50),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                minimumSize: const Size(100, 50),
-              ),
-              child: const Text('Log in'),
-              onPressed: () {
-                if (!checkTheShit()) return;
+          ),
+          const SizedBox(height: 10),
+          if (errorPassText.isNotEmpty) Text(errorPassText),
+          const SizedBox(height: 50),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              minimumSize: const Size(100, 50),
+            ),
+            child: const Text('Log in'),
+            onPressed: () {
+              if (!checkTheShit()) return;
 
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const Page2(
-                          title: 'Page 2',
-                          text: 'Page 2 center text',
-                        )));
-              },
-            ),
-            const SizedBox(height: 170),
-            const BottomRow(),
-          ],
-        ),
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const Page2(
+                        title: 'Page 2',
+                        text: 'Page 2 center text',
+                      )));
+            },
+          ),
+          const SizedBox(height: 236),
+          const BottomRow(),
+        ],
       ),
     );
   }

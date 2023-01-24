@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:day1/page2.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -10,11 +8,12 @@ class BottomRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
+    return Expanded(
       child: Container(
-        color: const Color.fromARGB(255, 48, 48, 48),
+        color: Color.fromARGB(255, 77, 75, 75),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Expanded(
               child: Column(
@@ -28,7 +27,8 @@ class BottomRow extends StatelessWidget {
                           await launchUrl(Uri.parse(url));
                         }
                       },
-                      child: const Text('MVP IT Solutions')),
+                      child: const Text('MVP IT Solutions',
+                          style: TextStyle(height: 1))),
                   const SizedBox(height: 1),
                   IconButton(
                       color: Colors.white,
@@ -56,32 +56,30 @@ class BottomRow extends StatelessWidget {
                             await launchUrl(Uri.parse(url));
                           }
                         },
-                        child: const Text(
-                          '386-320-8802',
-                        ),
+                        child: const Text('(386)-320-8802',
+                            style: TextStyle(height: 1)),
                       ),
                       const Text(
                         'US/CAN',
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle(color: Colors.white, height: 1),
                       ),
                     ],
                   ),
                   const SizedBox(height: 15),
                   TextButton(
                     onPressed: () async {
-                      const toEmail = 'dev@mvpitsolutions.com';
+                      const toEmail = 'development@mvpitsolutions.com';
                       const subject = 'MVP IT Inquiry';
                       const message = 'I am interested in working with MVPIT';
                       const url =
-                          'mailto:$toEmail?subject=${subject}&body=${message}';
+                          'mailto:$toEmail?subject=$subject&body=$message';
 
                       if (await canLaunchUrl(Uri.parse(url))) {
                         await launchUrl(Uri.parse(url));
                       }
                     },
-                    child: const Text(
-                      'dev@mvpitsolutions.com',
-                    ),
+                    child: const Text('development@mvpitsolutions.com',
+                        style: TextStyle(height: 1)),
                   ),
                 ],
               ),
@@ -89,6 +87,7 @@ class BottomRow extends StatelessWidget {
             Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                //crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   TextButton(
                     onPressed: () {
@@ -106,10 +105,9 @@ class BottomRow extends StatelessWidget {
                   const Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Text(
-                      'Software Development\n\nHome IT Services\n\nBusiness IT services\n\nPC & Mobile Device Repair\n\nTechnology Consulting',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
+                      'Software Development\nHome IT Services\nBusiness IT services\nPC & Mobile Device Repair\nTechnology Consulting',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.white, height: 2),
                     ),
                   ),
                 ],
@@ -131,9 +129,8 @@ class BottomRow extends StatelessWidget {
                   const SizedBox(height: 10),
                   const Text(
                     'Support\nLoctions\nSocial Media\nContact Form\nGet a quote',
-                    style: TextStyle(
-                      color: Colors.white,
-                    ),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(color: Colors.white, height: 2),
                   ),
                 ],
               ),
