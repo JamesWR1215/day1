@@ -10,7 +10,7 @@ class BottomRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        color: Color.fromARGB(255, 77, 75, 75),
+        color: const Color.fromARGB(255, 77, 75, 75),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -134,7 +134,7 @@ class BottomRow extends StatelessWidget {
                   ),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

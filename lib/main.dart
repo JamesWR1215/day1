@@ -178,8 +178,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       )));
             },
           ),
-          const SizedBox(height: 236),
+          const SizedBox(height: 230),
           const BottomRow(),
+          const Divider(color: Colors.black),
+          const Text('MVPIT Solutions')
         ],
       ),
     );
